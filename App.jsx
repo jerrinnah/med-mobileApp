@@ -9,14 +9,20 @@ const SignIn = () => {
 
   return (
     <View style={styles.container}>
+      <Image style={styles.girlBg} source={(require('./assets/mediGirl.png'))}/>
       <View style={styles.header}>
       <Image style={styles.logoIcon} source={require('./assets/logo-full.png')}/>
      <View style={styles.welcomeMessage}>
-      <Text style={styles.userFName}>Hi Danlei, Welcome</Text>
-      <Text style={styles.subText}>to Silent Moon</Text>
+      <Text style={[styles.userFName, styles.white]}>Hi Danlei, Welcome</Text>
+      <Text style={[styles.subText, styles.white]}>to Silent Moon</Text>
      </View>
 
+     <Pressable style={styles.startBtn}>
+       
+        <Text style={styles.black}> GET STARTED</Text>
+      </Pressable>
       </View>
+
       
     
     </View>
@@ -26,10 +32,10 @@ const SignIn = () => {
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      justifyContent:'flex-start',
+      justifyContent:'center',
       alignItems:'center',
       backgroundColor: '#8C96FF',
-      // paddingBottom: 40,
+      paddingBottom: 40,
     },
     header:{
 
@@ -50,14 +56,29 @@ const styles = StyleSheet.create({
       left:10,
     },
     welcomeMessage:{
-      paddingTop: 130,
-      justifyContent:"center",
-      // backgroundColor:'red',
-     
-
+      flex:1,
+      justifyContent:'center',
+      alignContent:'center',
+      bottom:250,
     },
     userFName:{
-      fontSize: 25,
+      fontSize: 20,
+      justifyContent:'center',
+      // fontWeight:200,
+    },
+    subText:{
+      left:37,
+    },
+    girlBg:{
+      position:'absolute'
+    },
+    startBtn:{
+
+      alignItems:'center',
+      backgroundColor:'white',
+      borderRadius:30,
+      padding:15,
+      
     },
  
   })

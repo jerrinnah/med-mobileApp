@@ -26,7 +26,7 @@ const SignIn = () => {
         <Text style={styles.black}> CONTINUE WITH GOOGLE</Text>
       </Pressable>
      </View>
-     <Text  style={styles.black, styles.email}> OR LOGIN WITH EMAIL</Text>
+     <Text  style={[styles.black, styles.email]}> OR LOGIN WITH EMAIL</Text>
     
     <View>
     
@@ -50,7 +50,7 @@ const SignIn = () => {
      
     </Pressable>
     <Text style={styles.forgetPassword}>Forgot Password?</Text>
-    <Text style={styles.grey, styles.signup}>ALREADY HAVE AN ACCOUNT? SIGN UP</Text>
+    <Text style={[styles.grey, styles.signup]}>ALREADY HAVE AN ACCOUNT? SIGN UP</Text>
     
     </View>
   )

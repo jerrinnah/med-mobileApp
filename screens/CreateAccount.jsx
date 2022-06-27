@@ -26,7 +26,7 @@ const SignIn = () => {
         <Text style={styles.black}> CONTINUE WITH GOOGLE</Text>
       </Pressable>
      </View>
-     <Text  style={styles.black, styles.email}> OR LOGIN WITH EMAIL</Text>
+     <Text  style={[styles.black, styles.email]}> OR LOGIN WITH EMAIL</Text>
     
     <View>
     
