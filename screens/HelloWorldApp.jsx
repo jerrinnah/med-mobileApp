@@ -4,7 +4,8 @@ import { StyleSheet, Text, View, Image, Pressable, SafeAreaView} from 'react-nat
 import { TextInput } from 'react-native'
 
 
-const HelloWorldApp = () => {
+const HelloWorldApp = (props) => {
+  console.log(props);
   
   const [state, setState]= useState('Welcome')
 
@@ -14,20 +15,20 @@ const HelloWorldApp = () => {
  
   return (
     <View style={styles.container}>
-      <Image style={styles.bg} source={require('./assets/banner-bg.png')} />
+      <Image style={styles.bg} source={require('../assets/banner-bg.png')} />
       <Image
         style={styles.banner}
-        source={require('./assets/banner-girl.png')}
+        source={require('../assets/banner-girl.png')}
       />
-      <Image style={styles.logo} source={require('./assets/logo-full.png')} />
+      <Image style={styles.logo} source={require('../assets/logo-full.png')} />
 
       <View style={styles.textBox}>
         <Text style={styles.titleText}> We are what we do</Text>
         <Text style={styles.paragraph}>
           Thousands of people are using Silent Moon for small meditation...
         </Text>
-        <Pressable style={styles.button}>
-          <Text style={styles.white} onPress={clickHandler}> {state} </Text>
+        <Pressable onPress={() => props.navigation.navigate('signup', {name: 'Jerry' })} style={styles.button}>
+          <Text style={styles.white}> {state} </Text>
         </Pressable>
         <Text style={styles.paragraph}>All ready have an account? Log in</Text>
        

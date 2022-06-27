@@ -2,8 +2,13 @@ import React from 'react'
 import { useState } from 'react'
 import { StyleSheet, Text, View, Image, Pressable, SafeAreaView} from 'react-native'
 import { TextInput } from 'react-native'
+import { useNavigation } from '@react-navigation/native'
 
-const SignIn = () => {
+const SignIn = ({ route }) => {
+
+  const navigation = useNavigation();
+
+  console.log(route)
 
   const [text, onChangeText] = React.useState("Useless Text");
   const [number, onChangeNumber] = React.useState(null);
@@ -12,17 +17,17 @@ const SignIn = () => {
     <View style={styles.container}>
       
       <View>
-        <Image source={require('./assets/signinBg.png')}/>
-        <Image style={styles.leftIcon} source={require('./assets/left-icon.png')}/>
+        <Image source={require('../assets/signinBg.png')}/>
+        <Image style={styles.leftIcon} source={require('../assets/left-icon.png')}/>
       </View>
-      <Text style={styles.headerText}> Welcome Back</Text>
+      <Text style={styles.headerText}> Get Started</Text>
      <View style={styles.buttonsGroup}>
      <Pressable style={styles.facebookBtn}>
-        <Image source={require('./assets/facebook.png')}/>
+        <Image source={require('../assets/facebook.png')}/>
         <Text style={styles.white}> CONTINUE WITH FACEBOOK</Text>
       </Pressable>
       <Pressable style={styles.googleBtn}>
-        <Image source={require('./assets/google.png')}/>
+        <Image source={require('../assets/google.png')}/>
         <Text style={styles.black}> CONTINUE WITH GOOGLE</Text>
       </Pressable>
      </View>
@@ -45,7 +50,7 @@ const SignIn = () => {
        
       />
     </View>
-    <Pressable style={styles.loginBtn}>
+    <Pressable onPress={() => navigation.navigate('welcomescreen')} style={styles.loginBtn}>
       <Text style={styles.white}> LOG IN</Text>
      
     </Pressable>
