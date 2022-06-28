@@ -8,41 +8,52 @@ import {
   Pressable,
   SafeAreaView,
 } from "react-native";
-import Card from "../shared/card";
+import Card from "../components/card";
 import { useNavigation } from "@react-navigation/native";
 import { FlatList } from "react-native";
 
 const excercises = [
   {
-    id: 1,
-    image:  require("../assets/mediGirl.png"),
-    title: "Reduce Stress Here",
+    "id": 1,
+    "image":  require("../assets/blue.png"),
+    "title": "Reduce Stress Here",
   },
   {
     id: 2,
-    image: require("../assets/mediGirl.png"),
-    title: "Improve performance",
+    image: require("../assets/green.png"),
+    title: "Man",
   },
   {
     id: 3,
-    image: require("../assets/mediGirl.png"),
-    title: "Increase Happiness",
+    image: require("../assets/sleepb.png"),
+    title: "Cry Happiness",
   },
   {
     id: 4,
-    image: require("../assets/mediGirl.png"),
+    image: require("../assets/orangw.png"),
     title: "Better Sleep",
   },
   {
     id: 5,
-    image: require("../assets/mediGirl.png"),
+    image: require("../assets/peach.png"),
     title: "Personal growth",
   },
   {
     id: 6,
-    image: require("../assets/mediGirl.png"),
+    image: require("../assets/float.png"),
     title: "Reduce anxiety",
   },
+  {
+    id: 7,
+    image: require("../assets/mediGirl.png"),
+    title: "Friends",
+  },
+  {
+    id: 8,
+    image: require("../assets/sleepb.png"),
+    title: "Cry Happiness",
+  },
+ 
 ];
 
 const Catelog = ({ route }) => {
@@ -50,20 +61,16 @@ const Catelog = ({ route }) => {
 
   return (
     <View style={styles.container}>
-      <Image style={styles.bgUnion} source={require("../assets/Union.png")} />
-
-      <View>
         <View style={styles.introTitle}>
           <Text style={[styles.introHead]}> What Brings you</Text>
           <Text style={[styles.introSub]}> to silent Moon</Text>
           <Text style={[styles.introSubmin]}> choose a topic to focus on</Text>
         </View>
-      </View>
-
-      <View>
+        <Image style={styles.bgUnion} source={require("../assets/Union.png")} />
+      <View style={styles.cardContainer}>
         {/* <Card /> */}
-      </View>
        
+      <View style={styles.FlatList}>
       <FlatList
         data={excercises}
         renderItem={({ item }) => {
@@ -71,18 +78,26 @@ const Catelog = ({ route }) => {
           return <Card info={item} />;
         }}
         keyExtractor={(excercise) => excercise.id.toString()}
+        numColumns={2}
       />
+      </View>
+      </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "white",
-    paddingBottom: 40,
+   paddingTop: 100,
+  
+  },
+
+  cardContainer:{
+    position: 'absolute',
+    top:200,
+    Height:100,
+    width:395,
+    // backgroundColor:'red',
   },
   header: {},
   // TEXT STYLES
@@ -94,8 +109,7 @@ const styles = StyleSheet.create({
   },
   // TEXT STYLES ENDS
   introTitle: {
-    position: "relative",
-    bottom: 630,
+    alignItems:'center',
     justifyContent: "flex-end",
     right: 90,
   },
@@ -114,6 +128,18 @@ const styles = StyleSheet.create({
     fontSize: 15,
     fontWeight: "200",
   },
+  FlatList:{
+    
+    // backgroundColor:'green',
+    padding:20,
+    margin:10,
+    flexWrap:'wrap',
+    height:1200,
+    width:190,
+    paddingBottom:590,
+   
+  },
+  
 });
 
 export default Catelog;
