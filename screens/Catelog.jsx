@@ -14,9 +14,9 @@ import { FlatList } from "react-native";
 
 const excercises = [
   {
-    "id": 1,
-    "image":  require("../assets/blue.png"),
-    "title": "Reduce Stress", 
+    id: 1,
+    image: require("../assets/blue.png"),
+    title: "Reduce Stress",
   },
   {
     id: 2,
@@ -53,34 +53,36 @@ const excercises = [
     image: require("../assets/sleepb.png"),
     title: "Cry Happiness",
   },
- 
 ];
 
-const Catelog = ({ route }) => {
+const Catelog = (props) => {
   const navigation = useNavigation();
 
   return (
     <View style={styles.container}>
-        <View style={styles.introTitle}>
-          <Text style={[styles.introHead]}> What Brings you</Text>
-          <Text style={[styles.introSub]}> to silent Moon</Text>
-          <Text style={[styles.introSubmin]}> choose a topic to focus on</Text>
-        </View>
-        <Image style={styles.bgUnion} source={require("../assets/Union.png")} />
+      <View style={styles.introTitle}>
+        <Text style={[styles.introHead]}> What Brings you</Text>
+        <Text style={[styles.introSub]}> to silent Moon</Text>
+        <Text style={[styles.introSubmin]}> choose a topic to focus on</Text>
+      </View>
+      <Image style={styles.bgUnion} source={require("../assets/Union.png")} />
       <View style={styles.cardContainer}>
         {/* <Card /> */}
-       
-      <View style={styles.FlatList}>
-      <FlatList
-        data={excercises}
-        renderItem={({ item }) => {
-          
-          return <Card info={item} />;
-        }}
-        keyExtractor={(excercise) => excercise.id.toString()}
-        numColumns={2}
-      />
-      </View>
+
+        <View style={styles.FlatList}>
+          <FlatList
+            data={excercises}
+            renderItem={({ item }) => {
+              return <Card info={item} />;
+            }}
+            keyExtractor={(excercise) => excercise.id.toString()}
+            numColumns={2}
+          />
+
+            <Pressable onPress={()=> props.navigation.navigate('reminders')}>
+            <Text style={[styles.grey, styles.bottomText]}>SET REMINDER</Text>
+            </Pressable>
+        </View>
       </View>
     </View>
   );
@@ -88,15 +90,14 @@ const Catelog = ({ route }) => {
 
 const styles = StyleSheet.create({
   container: {
-   paddingTop: 100,
-  
+    paddingTop: 100,
   },
 
-  cardContainer:{
-    position: 'absolute',
-    top:200,
-    Height:100,
-    width:395,
+  cardContainer: {
+    position: "absolute",
+    top: 200,
+    Height: 100,
+    width: 395,
     // backgroundColor:'red',
   },
   header: {},
@@ -109,7 +110,7 @@ const styles = StyleSheet.create({
   },
   // TEXT STYLES ENDS
   introTitle: {
-    alignItems:'center',
+    alignItems: "center",
     justifyContent: "flex-end",
     right: 90,
   },
@@ -128,17 +129,20 @@ const styles = StyleSheet.create({
     fontSize: 15,
     fontWeight: "200",
   },
-  FlatList:{
-    
+  FlatList: {
     // backgroundColor:'green',
-    padding:20,
-    margin:10,
-    flexWrap:'wrap',
-    height:1200,
-    width:190,
-    paddingBottom:590,
-   
+    justifyContent: "center",
+    alignContent: "center",
+    padding: 9,
+    flexWrap: "wrap",
+    height: 1200,
+    width: 420,
+    paddingBottom: 590,
   },
+  bottomText:{
+    paddingTop:10,
+    alignSelf:'center'
+  }
   
 });
 

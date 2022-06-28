@@ -8,6 +8,7 @@ import Unboarding from './screens/HelloWorldApp'
 import Signup from './screens/SignIn'
 import Welcome from './screens/WelcomeScreen'
 import Catelog from './screens/Catelog'
+import Reminders from './screens/Reminders'
 
 const { Navigator, Screen } = createNativeStackNavigator();
 const App = () => {
@@ -18,6 +19,8 @@ const App = () => {
         <Screen name='signup'  component={Signup}/>
         <Screen name='welcomescreen'  component={Welcome}/>
         <Screen name='catelog' component={Catelog}/>
+        <Screen name='reminders' component={Reminders}/>
+        
       </Navigator>
     </NavigationContainer>
   )
