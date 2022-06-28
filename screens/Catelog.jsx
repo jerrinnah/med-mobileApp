@@ -16,7 +16,7 @@ const excercises = [
   {
     "id": 1,
     "image":  require("../assets/blue.png"),
-    "title": "Reduce Stress Here",
+    "title": "Reduce Stress", 
   },
   {
     id: 2,
