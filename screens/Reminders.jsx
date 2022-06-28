@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet, Image } from "react-native";
+import { View, Text, StyleSheet, Image, Pressable } from "react-native";
 
 const Reminders = (props) => {
   return (
@@ -27,6 +27,11 @@ const Reminders = (props) => {
        
       </View>
       <Image style={styles.dateImg} source={require('../assets/dates.png')}/>
+      <Pressable onPress={() => props.navigation.navigate('signup')} style={styles.button}>
+          <Text style={styles.white}> SAVE</Text>
+        </Pressable>
+        <Text style={styles.paragraph}>NO THANKS</Text>
+       
     </View>
   );
 };
@@ -60,8 +65,28 @@ const styles = StyleSheet.create({
     marginLeft:20,
     width:350,
     padding:10,
-    marginTop:50,
+    marginTop:70,
+  },
+
+  white: {
+    color: 'white',
+    fontSize: 13,
+  },
+
+  button:{
+    marginTop: 80,
+    alignItems:'center',
+    justifyContent:'center',
+    width:300,
+    padding: 15,
+    borderRadius:20,
+    backgroundColor: '#8E97FD',
+  },
+  paragraph:{
+    marginTop:20,
+    fontSize:12,
   }
+
 });
 
 export default Reminders;
