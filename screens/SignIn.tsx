@@ -6,7 +6,7 @@ import { useNavigation } from '@react-navigation/native'
 
 const SignIn = ({ route }) => {
 
-  const navigation = useNavigation();
+  const navigation = useNavigation<any>();
 
   console.log(route)
 
@@ -154,9 +154,9 @@ const styles = StyleSheet.create({
     signup:{
       fontSize:10,
       paddingTop:70,
-    }
+    },
     
-  
+    black: {}
    
    
   })

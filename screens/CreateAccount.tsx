@@ -84,7 +84,9 @@ const styles = StyleSheet.create({
       backgroundColor: 'white',
       // paddingBottom: 40,
     },
+    emailInput: {},
     // TEXT STYLES
+    black: {},
     white:{
       color:'white'
     },

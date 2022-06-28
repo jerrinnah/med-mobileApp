@@ -20,7 +20,6 @@ const App = () => {
         <Screen name='welcomescreen'  component={Welcome}/>
         <Screen name='catelog' component={Catelog}/>
         <Screen name='reminders' component={Reminders}/>
-        
       </Navigator>
     </NavigationContainer>
   )

@@ -92,7 +92,7 @@ const styles = StyleSheet.create({
   container: {
     paddingTop: 100,
   },
-
+  bgUnion: {},
   cardContainer: {
     position: "absolute",
     top: 200,
@@ -110,9 +110,9 @@ const styles = StyleSheet.create({
   },
   // TEXT STYLES ENDS
   introTitle: {
-    alignItems: "center",
+    alignItems: "flex-start",
     justifyContent: "flex-end",
-    right: 90,
+    paddingLeft: 20
   },
   introHead: {
     // fontFamily:'Roboto-Bold',
