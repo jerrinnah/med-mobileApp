@@ -12,6 +12,8 @@ import Card from "../components/card";
 import { useNavigation } from "@react-navigation/native";
 import { FlatList } from "react-native";
 
+import Parent from '../dummy/Parent'
+
 const excercises = [
   {
     id: 1,
@@ -60,16 +62,16 @@ const Catelog = (props) => {
 
   return (
     <View style={styles.container}>
-      <View style={styles.introTitle}>
+      {/* <View style={styles.introTitle}>
         <Text style={[styles.introHead]}> What Brings you</Text>
         <Text style={[styles.introSub]}> to silent Moon</Text>
         <Text style={[styles.introSubmin]}> choose a topic to focus on</Text>
       </View>
       <Image style={styles.bgUnion} source={require("../assets/Union.png")} />
-      <View style={styles.cardContainer}>
+      <View style={styles.cardContainer}> */}
         {/* <Card /> */}
 
-        <View style={styles.FlatList}>
+        {/* <View style={styles.FlatList}>
           <FlatList
             data={excercises}
             renderItem={({ item }) => {
@@ -83,14 +85,16 @@ const Catelog = (props) => {
             <Text style={[styles.grey, styles.bottomText]}>SET REMINDER</Text>
             </Pressable>
         </View>
-      </View>
+      </View> */}
+      <Parent />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: 100,
+    paddingTop: 0,
+    flex: 1,
   },
   bgUnion: {},
   cardContainer: {
