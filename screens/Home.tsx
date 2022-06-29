@@ -1,6 +1,6 @@
 import React from "react";
 import { View, StyleSheet, Text, Image } from "react-native";
-// import Course from "../components/course";
+import Course from "../components/course";
 
 const Home = () => {
   return (
@@ -15,7 +15,7 @@ const Home = () => {
         </View>
 
         <View style={styles.courseContainer}>
-            {/* <Course/> */}
+            <Course/>
         </View>
       </View>
     </View>
