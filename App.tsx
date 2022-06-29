@@ -9,6 +9,7 @@ import Signup from './screens/SignIn'
 import Welcome from './screens/WelcomeScreen'
 import Catelog from './screens/Catelog'
 import Reminders from './screens/Reminders'
+import Home from './screens/Home';
 
 const { Navigator, Screen } = createNativeStackNavigator();
 const App = () => {
@@ -20,6 +21,7 @@ const App = () => {
         <Screen name='welcomescreen'  component={Welcome}/>
         <Screen name='catelog' component={Catelog}/>
         <Screen name='reminders' component={Reminders}/>
+        <Screen name='home' component={Home}/>
       </Navigator>
     </NavigationContainer>
   )
