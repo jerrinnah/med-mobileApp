@@ -6,7 +6,7 @@ const Reminders = (props) => {
     <View style={styles.remindPage}>
       <View>
         <Text style={styles.textTitle}>
-          {" "}
+         
           What time would you like to meditate?
         </Text>
         <Text style={styles.textSubTitle}>
@@ -18,7 +18,7 @@ const Reminders = (props) => {
       </View>
       <View>
         <Text style={styles.textTitle}>
-          {" "}
+         
           Which day would you like to meditate?
         </Text>
         <Text style={styles.textSubTitle}>
@@ -30,7 +30,10 @@ const Reminders = (props) => {
       <Pressable onPress={() => props.navigation.navigate('signup')} style={styles.button}>
           <Text style={styles.white}> SAVE</Text>
         </Pressable>
-        <Text style={styles.paragraph}>NO THANKS</Text>
+       
+       <Pressable onPress={()=> props.navigation.navigate('home')}>
+       <Text style={styles.paragraph}>NO THANKS</Text>
+       </Pressable>
        
     </View>
   );
